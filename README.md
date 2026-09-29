@@ -1,2 +1,6 @@
-# ong-maos-que-ajudam
+Projeto acadêmico de desenvolvimento front-end.
 
+Tecnologias utilizadas:
+- HTML
+- CSS
+- JavaScript
