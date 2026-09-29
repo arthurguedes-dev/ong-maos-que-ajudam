@@ -1,0 +1,402 @@
+/* Utilizo o :root para declarar variáveis globais para reutilização. */
+:root {
+
+    --cor-primaria: #0D4F80;
+    --cor-secundaria: #2696D2;
+    --cor-destaque: #F2C94C;
+    --cor-texto: #1F2933;
+    --cor-texto-claro: #FFFFFF;
+    --cor-fundo: #F5F7FA;
+    --cor-fundo-secundario: #E8F1F8;
+    --cor-borda: #CBD5E1;
+    --cor-hover: #A8D8F0;
+
+    --fonte-xs: 0.75rem;
+    --fonte-sm: 0.875rem;
+    --fonte-md: 1rem;
+    --fonte-lg: 1.5rem;
+    --fonte-xl: 2rem;
+
+    --espaco-1: 0.25rem;
+    --espaco-2: 0.5rem;
+    --espaco-3: 0.75rem;
+    --espaco-4: 1rem;
+    --espaco-5: 1.5rem;
+    --espaco-6: 2rem;
+
+}
+
+/* Corpo - cor de fundo e texto. */
+body {    
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+
+}
+
+
+/* cabeçalho - cor de fundo, texto,
+   espaçamento interno (padding) e alinhamento de texto. */
+header {
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-claro);
+    padding: var(--espaco-5);
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+/* Modificação na imagem para se adequar a página
+   e mais responsiva (height: auto;). */ 
+img {
+    max-width: 100%;
+    height: auto;
+
+}
+
+/* largura, margens e espaçamento interno. */ 
+main {
+    max-width: 1100px;
+    margin: var(--espaco-6) auto;
+    padding: 0 var(--espaco-4);
+
+/* Organizar elementos em Grid,
+   separar em 12 colunas com espaço de 1 fração utilizando -> grid-template-columns: repeat */    
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+
+/* Espaçamento entre os elementos do Grid */    
+    gap: var(--espaco-4);
+
+}
+
+/* Padronização das seções, cor de fundo,margin-botton(espaçamento entre as seções),
+   cor da borda e arredondamento da borda (border-radius). */
+section {
+    background-color: var(--cor-texto-claro);
+    padding: var(--espaco-5);
+    margin-bottom: var(--espaco-5);
+    border: var(--cor-borda);
+    border-radius: 10px;
+
+/* Separar o elemento section as 3 em 4 colunas do Grid */
+    grid-column: span 4;
+
+}
+
+/* Padronizar o formulário igual ao restante do site. */
+form {
+    background-color: var(--cor-texto-claro);
+    padding: var(--espaco-5);
+    border-radius: 10px;
+
+/* display: flex - ativa o flexbox.
+   flex direction: column - organiza todo o conteúdo em coluna verticalmente. 
+   gap - cria um espaço entre cada conteúdo. */    
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaco-4);
+
+}
+
+/* Borda, espaçamento interno e entre os campos(Dados pessoais e Endereço) 
+   margem entre os fieldset para dar um espaçamento(pular uma linha) e arredondar bordas. */
+fieldset {
+    border: 1px solid var(--cor-borda);
+    padding: var(--espaco-4);
+    margin-bottom: var(--espaco-4);
+    border-radius: 10px;
+
+/* display: flex - ativa o flexbox.
+   flex direction: column - organiza todo o conteúdo em coluna verticalmente. 
+   gap - cria um espaço entre cada conteúdo. */
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaco-2);
+
+}
+
+/* Espaçamento interno, cor da borda e arredondamento. */
+input {
+    padding: var(--espaco-2);
+    border: 1px solid var(--cor-borda);
+    border-radius: 6px;
+
+}
+
+/* Quando qualquer input for selecionado ficar destacado com a cor. */
+input:focus {
+    outline: 2px solid var(--cor-secundaria);
+
+}
+
+/* Espaçamento interno, cor da borda e arredondamento. */
+select {
+    padding: var(--espaco-2);
+    border: 1px solid var(--cor-borda);
+    border-radius: 6px;
+
+}
+
+/* Quando o input Estado for selecionado ficará com a cor em destaque. */
+select:focus {
+    outline: 2px solid var(--cor-secundaria);
+
+}    
+
+/* Botão - cor de fundo, texto, remoção da borda,
+   espaçamento interno e arrondamento da borda. */
+button {
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-claro);
+    border: none;
+
+/*  Padding 1° valor = vertical (cima - baixo)
+    Padding 2° valor = horizontal (esquerda - direita) */    
+    padding: var(--espaco-3) var(--espaco-5);
+    border-radius: 6px;
+/* muda a cor do botão selecionado suavemente em vez de instataneamente. */    
+    transition: 0.2s;
+
+}
+/* Quando o mouse passar sobre o botão, ele muda de cor. */
+button:hover {
+    background-color: var(--cor-secundaria);
+
+}
+
+button:focus {
+    outline: 2px solid var(--cor-secundaria);
+}
+
+/* Quando o bottão é pressionando fica levemente menor.*/
+button:active {
+    transform: scale(0.98);
+}
+
+button:disabled {
+    background-color: var(--cor-borda);
+    color: var(--cor-texto);
+    cursor: not-allowed;
+}
+
+/* Quando o usuário preenche o campo corretamente. 
+   Aparece uma borda verde no campo. */
+input:user-valid {
+    outline: 2px solid #7BC67B;
+}
+
+/* Quando o usuário preenche o campo incorretamente
+   Aparece uma borda vermelha no campo. */
+input:user-invalid {
+    outline: 2px solid #D9534F;
+
+}
+
+/* ====== GRID ====== */
+/* Breakpoints responsivos: adapta o layout conforme a largura da tela. */
+
+@media (max-width: 1200px) {
+/* Reduz a largura máxima do conteúdo. */
+
+    main {
+        max-width: 1000px;  
+    }
+
+}
+
+@media (max-width: 992px) {
+/* 2 seções por linha. */ 
+    
+    section {
+        grid-column: span 6;
+    }
+
+}
+
+@media (max-width: 768px) {
+/* 1 seção por linha. */
+    
+    section {
+        grid-column: span 12;
+    }
+
+}
+
+@media (max-width: 576px) {
+/* Reduz os espaçamentos. */
+
+    main {
+        padding: 0 var(--espaco-3);
+    }
+    
+    section {
+        padding: var(--espaco-4);
+    }
+
+}
+
+@media (max-width: 400px) {
+/* Reduz ainda mais os espaçamentos. */
+
+    main {
+        padding: 0 var(--espaco-2);
+    }
+
+    section {
+        padding: var(--espaco-3);
+    }
+
+}
+
+.navegacao {
+    margin-top: var(--espaco-4);
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: var(--espaco-5);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Estilização dos links para combinar com o header */
+.menu a {
+    color: var(--cor-texto-claro);
+    text-decoration: none;
+    padding: var(--espaco-2) var(--espaco-3);
+}
+
+.menu a:hover {
+    background-color: var(--cor-secundaria);
+    border-radius: 6px;
+}
+
+/* Oculta o menu em telas grandes com -> display: none;. */
+.submenu {
+    display: none;
+    position: absolute;
+    background-color: var(--cor-texto-claro);
+    padding: var(--espaco-2);
+    list-style: none;
+    border-radius: 6px;
+    margin: 0;
+    min-width: 200px;
+
+}
+
+
+.submenu a {
+    color: var(--cor-texto);
+    display: block;
+
+}
+
+.submenu a:hover {
+    background-color: var(--cor-secundaria);
+
+}
+
+.menu-dropdown {
+    position: relative;
+
+}
+
+/* Quando passar o mouse em cima de Projetos, aparece o submenu */
+.menu-dropdown:hover .submenu,
+/* Quando seleciona uma opção dentro do menu ele muda de cor */
+.menu-dropdown:focus-within .submenu {
+    display: block;
+}
+
+/* Esconde o menu */
+.menu-toggle {
+    display: none;
+}
+
+/* Esconde o icone de hambúrguer em telas grandes */
+.menu-icon {
+    display: none;
+}
+
+/* Configuração para telas menores. */
+@media (max-width: 768px) {
+
+/* Em telas menores o icone de hambúguer aparece */    
+    .menu-icon {
+        display: block;
+        cursor: pointer;
+        font-size: 2rem;
+    }
+
+/* Esconde o menu normal em telas menores */    
+    .menu {
+        display: none;
+        flex-direction: column;
+        gap: var(--espaco-3)
+    }
+
+/* #menu-toggle seleciona o checkbox */
+/* :checked verifica se está marcado */
+/* ~ procura um elemento irmão depois dele no caso o menu. */    
+    #menu-toggle:checked ~ .menu {
+        display: flex;
+    }
+
+.menu-dropdown .submenu{
+/* submenu volta ao normal da página. */    
+    position: static;
+/* submenu fica visível enquanto estiver aberto. */    
+    display: block;
+/* Ao clicar no submenu aparece as opções de links ref ao Projetos logo abaixo. */     
+    padding-left: var(--espaco-3);
+    background-color: transparent;
+    min-width: 0;
+}
+
+.submenu a {
+    color: var(--cor-texto-claro);
+}
+
+}
+
+/* Estilização da etiqueta de categorização */
+.badge {
+    display: inline-block; /* permite controlar o espaço da etiqueta. */
+    background-color: var(--cor-fundo-secundario);
+    color: var(--cor-primaria);
+    padding: var(--espaco-1) var(--espaco-2);
+    border-radius: 20px;
+    font-size: var(--fonte-sm);
+
+}
+
+/* Estilização do alerta */
+.alert {
+    background-color: var(--cor-fundo-secundario);
+    color: var(--cor-primaria);
+    padding: var(--espaco-3);
+    border-left: 4px solid var(--cor-secundaria); /* uma faixa lateral em destque. */
+    border-radius: 6px;
+}
+
+.toast {
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-claro);
+    padding: var(--espaco-3) var(--espaco-4);
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    margin-top: var(--espaco-3);
+}
+
+.card {
+    background-color: var(--cor-texto-claro);
+    padding: var(--espaco-5);
+    border: 1px solid var(--cor-borda);
+    border-radius: 10px;
+}
