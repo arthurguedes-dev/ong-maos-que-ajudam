@@ -1,0 +1,27 @@
+{
+  "name": "ong-maos-que-ajudam",
+  "version": "1.0.0",
+  "description": "Projeto acadêmico de desenvolvimento front-end.",
+  "homepage": "https://github.com/arthurguedes-dev/ong-maos-que-ajudam#readme",
+  "bugs": {
+    "url": "https://github.com/arthurguedes-dev/ong-maos-que-ajudam/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arthurguedes-dev/ong-maos-que-ajudam.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2",
+    "vite": "^8.3.1"
+  }
+}
